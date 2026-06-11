@@ -43,11 +43,31 @@ def predict_with_attention(text, tokenizer, model):
     tokens = tokenizer.convert_ids_to_tokens(inputs["input_ids"][0])
     word_attention = list(zip(tokens, cls_attention))
 
-    # remove special tokens
+    # map back to words
+    tokens = tokenizer.convert_ids_to_tokens(inputs["input_ids"][0])
+    word_attention = list(zip(tokens, cls_attention))
+
+    SKIP = {
+        "the", "a", "an", "is", "it", "this", "that", "was", "were",
+        "be", "been", "being", "have", "has", "had", "do", "does", "did",
+        "will", "would", "could", "should", "may", "might", "shall",
+        "to", "of", "in", "for", "on", "with", "at", "by", "from",
+        "as", "into", "through", "i", "he", "she", "they", "we", "you",
+        "my", "his", "her", "their", "its", "our", "your", "and", "but",
+        "or", "so", "yet", "both", "either", "not", "nor", "just",
+        "film", "movie", "one", "even", "like", "really", "also", "more"
+    }
+
+    # remove special tokens, stopwords, and short subword pieces
     word_attention = [
         (tok, score) for tok, score in word_attention
         if tok not in ["[CLS]", "[SEP]", "[PAD]"]
+        and tok.lower() not in SKIP
+        and len(tok.replace("##", "")) > 2
     ]
+
+    # sort by attention score descending
+    word_attention_sorted = sorted(word_attention, key=lambda x: x[1], reverse=True)
 
     # sort by attention score descending
     word_attention_sorted = sorted(word_attention, key=lambda x: x[1], reverse=True)
