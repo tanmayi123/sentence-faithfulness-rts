@@ -490,6 +490,7 @@ urllib3 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_95
 uuid_utils==0.14.1
 uvicorn==0.42.0
 uvloop @ file:///opt/miniconda3/conda-bld/uvloop_1762175502840/work
+vaderSentiment==3.3.2
 w3lib @ file:///opt/miniconda3/conda-bld/w3lib_1764240043879/work
 watchdog @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_17oci7qz55/croot/watchdog_1740409923753/work
 wcwidth @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_8el7txr34i/croot/wcwidth_1750352901095/work
