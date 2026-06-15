@@ -441,7 +441,6 @@ sniffio @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/sniffi
 snowballstemmer @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_06xl53gun3/croot/snowballstemmer_1756710203470/work
 sortedcontainers @ file:///tmp/build/80754af9/sortedcontainers_1623949099177/work
 soupsieve @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/soupsieve_1728586120162/work
-spacy==3.8.14
 spacy-legacy==3.0.12
 spacy-loggers==1.0.5
 Sphinx @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_13dzrrqdys/croot/sphinx_1744737147019/work
